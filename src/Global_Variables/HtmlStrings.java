@@ -185,4 +185,94 @@ public interface HtmlStrings {
             "</div>\n" +
             "</body>\n" +
             "</html>";
+
+    String LoginPageInvalidPassword = "<html>\n" +
+            "<head>\n" +
+            "  <title>Login</title>\n" +
+            "  <style>\n" +
+            "    label,a,h1 {\n" +
+            "      font-family: sans-serif;\n" +
+            "    }\n" +
+            "  </style>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "<h1 style=\"position: absolute;top: 5%;left: 45%\">Welcome!</h1>\n" +
+            "<h1 style=\"position: absolute;top: 9%;left: 41%;color: red;\">Invalid password</h1>\n" +
+            "<div style=\"border-left: 3px solid black;width: 200px;height: 250px;margin: 0 auto;margin-top: 10%;background-color: beige\">\n" +
+            "  <form action=\"/login\" method=\"post\" style=\"width: 165px;margin: 0 auto;position: absolute;top: 25%;left: 45%;\">\n" +
+            "    <label for=\"emailAddress\">Email:</label>\n" +
+            "    <br>\n" +
+            "    <input type=\"text\" name=\"emailAddress\" id=\"emailAddress\">\n" +
+            "    <br><br>\n" +
+            "    <label for=\"password\">Password:</label>\n" +
+            "    <br>\n" +
+            "    <input type=\"password\" name=\"password\" id=\"password\">\n" +
+            "    <br>\n" +
+            "    <input type=\"submit\" value=\"Login\">\n" +
+            "  </form>\n" +
+            "  <a href=\"SignUpPage.jsp\" style=\"margin: 0 auto;position: absolute;top: 43%;left: 45%;\">No account? Click here</a>\n" +
+            "  <a href=\" \" style=\"margin: 0 auto;position: absolute;top: 48%;left: 45%;\">Forgot password?</a>\n" +
+            "</div>\n" +
+            "</body>\n" +
+            "</html>";
+
+    String LoginPageInexistentEmail = "<html>\n" +
+            "<head>\n" +
+            "  <title>Login</title>\n" +
+            "  <style>\n" +
+            "    label,a,h1 {\n" +
+            "      font-family: sans-serif;\n" +
+            "    }\n" +
+            "  </style>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "<h1 style=\"position: absolute;top: 5%;left: 45%\">Welcome!</h1>\n" +
+            "<h1 style=\"position: absolute;top: 9%;left: 39%;color: red;\">This email doesn't exist</h1>\n" +
+            "<div style=\"border-left: 3px solid black;width: 200px;height: 250px;margin: 0 auto;margin-top: 10%;background-color: beige\">\n" +
+            "  <form action=\"/login\" method=\"post\" style=\"width: 165px;margin: 0 auto;position: absolute;top: 25%;left: 45%;\">\n" +
+            "    <label for=\"emailAddress\">Email:</label>\n" +
+            "    <br>\n" +
+            "    <input type=\"text\" name=\"emailAddress\" id=\"emailAddress\">\n" +
+            "    <br><br>\n" +
+            "    <label for=\"password\">Password:</label>\n" +
+            "    <br>\n" +
+            "    <input type=\"password\" name=\"password\" id=\"password\">\n" +
+            "    <br>\n" +
+            "    <input type=\"submit\" value=\"Login\">\n" +
+            "  </form>\n" +
+            "  <a href=\"SignUpPage.jsp\" style=\"margin: 0 auto;position: absolute;top: 43%;left: 45%;\">No account? Click here</a>\n" +
+            "  <a href=\" \" style=\"margin: 0 auto;position: absolute;top: 48%;left: 45%;\">Forgot password?</a>\n" +
+            "</div>\n" +
+            "</body>\n" +
+            "</html>";
+
+    String LoginPageEmptyFields = "<html>\n" +
+            "<head>\n" +
+            "  <title>Login</title>\n" +
+            "  <style>\n" +
+            "    label,a,h1 {\n" +
+            "      font-family: sans-serif;\n" +
+            "    }\n" +
+            "  </style>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "<h1 style=\"position: absolute;top: 5%;left: 45%\">Welcome!</h1>\n" +
+            "<h1 style=\"position: absolute;top: 9%;left: 37%;color: red;\">Please fill out all the fields</h1>\n" +
+            "<div style=\"border-left: 3px solid black;width: 200px;height: 250px;margin: 0 auto;margin-top: 10%;background-color: beige\">\n" +
+            "  <form action=\"/login\" method=\"post\" style=\"width: 165px;margin: 0 auto;position: absolute;top: 25%;left: 45%;\">\n" +
+            "    <label for=\"emailAddress\">Email:</label>\n" +
+            "    <br>\n" +
+            "    <input type=\"text\" name=\"emailAddress\" id=\"emailAddress\">\n" +
+            "    <br><br>\n" +
+            "    <label for=\"password\">Password:</label>\n" +
+            "    <br>\n" +
+            "    <input type=\"password\" name=\"password\" id=\"password\">\n" +
+            "    <br>\n" +
+            "    <input type=\"submit\" value=\"Login\">\n" +
+            "  </form>\n" +
+            "  <a href=\"SignUpPage.jsp\" style=\"margin: 0 auto;position: absolute;top: 43%;left: 45%;\">No account? Click here</a>\n" +
+            "  <a href=\" \" style=\"margin: 0 auto;position: absolute;top: 48%;left: 45%;\">Forgot password?</a>\n" +
+            "</div>\n" +
+            "</body>\n" +
+            "</html>";
 }

@@ -134,4 +134,22 @@ public class UserMethods implements SqlQueries {
         connection.close();
         return bool;
     }
+
+    public static String getPassword(String email) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserPassword);
+
+        statement.setString(1,email);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        String psw  = rs.getString("password");
+
+        connection.close();
+
+        return psw;
+    }
 }
