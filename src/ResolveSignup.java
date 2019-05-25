@@ -32,8 +32,13 @@ public class ResolveSignup extends HttpServlet implements HtmlStrings {
                 String confirm_password = req.getParameter("confirm_password");
 
                 if(password.equals(confirm_password)) {
-                    UserMethods.addUser(firstName, lastName, gender, birthdate.getYear(), birthdate.getMonth(), birthdate.getDay(), userEmail, password);
-                    out.println("User added!");
+                    if(!firstName.isEmpty() && !lastName.isEmpty() && !gender.isEmpty()
+                            && !birthdate.toString().isEmpty() && !password.isEmpty() && !confirm_password.isEmpty()) {
+                        UserMethods.addUser(firstName, lastName, gender, birthdate.getYear(), birthdate.getMonth(), birthdate.getDay(), userEmail, password);
+                        out.println(HtmlStrings.LoginPageDefault);
+                    } else {
+                        out.println(HtmlStrings.SignUpPageEmptyFields);
+                    }
                 } else {
                     out.println(HtmlStrings.SignUpPageMismatchedPasswords);
                 }

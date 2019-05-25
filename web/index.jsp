@@ -19,9 +19,9 @@
 <h1 style="position: absolute;top: 5%;left: 45%">Welcome!</h1>
 <div style="border-left: 3px solid black;width: 200px;height: 250px;margin: 0 auto;margin-top: 10%;background-color: beige">
   <form action="/login" method="post" style="width: 165px;margin: 0 auto;position: absolute;top: 25%;left: 45%;">
-    <label for="username">Username:</label>
+    <label for="emailAddress">Email:</label>
     <br>
-    <input type="text" name="username" id="username">
+    <input type="text" name="emailAddress" id="emailAddress">
     <br><br>
     <label for="password">Password:</label>
     <br>

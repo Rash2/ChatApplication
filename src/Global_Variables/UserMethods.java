@@ -4,6 +4,8 @@ import java.sql.*;
 
 public class UserMethods implements SqlQueries {
 
+    // User methods
+
     public static void addUser(String firstName, String lastName, String sex, int year, int month, int day, String email, String password) throws SQLException, ClassNotFoundException {
 
         Date birthdate = new Date(year,month,day);
