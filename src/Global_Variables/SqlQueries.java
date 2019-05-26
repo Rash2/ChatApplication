@@ -20,6 +20,10 @@ public interface SqlQueries {
 
     String getUserLastName="SELECT lastname FROM users WHERE email = ?";
 
+    String getUserEmail="SELECT email FROM users WHERE id = ?";
+
+    String getUserId="SELECT id FROM users WHERE email = ?";
+
     //Queries for message_log table
     public static final String addMessageToLog="INSERT INTO message_log (idconversation, msg_source, text) " +
             "VALUES (?, ?, ?)";
