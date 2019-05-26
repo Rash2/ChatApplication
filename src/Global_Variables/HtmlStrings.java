@@ -275,4 +275,36 @@ public interface HtmlStrings {
             "</div>\n" +
             "</body>\n" +
             "</html>";
+
+    String FriendListPageDefaultStartTitle = "<html>\n" +
+            "<head>\n" +
+            "    <title>\n";
+
+    String FriendListPageDefaultEndTitle =   "</title>\n" +
+            "</head>\n";
+    String FriendListPageDefaultDisplayHeaderStart = "<body>\n"+
+            "<div style=\"background-color: black;width: 100%;height: 10%;\">\n"+
+            "    <h1 style=\"font-family: sans-serif;left: 2%;position: absolute;color: white\">Welcome ";
+
+    String FriendListPageDefaultDisplayHeaderEnd = "</h1>\n" +
+            "    <form action=\"\" method=\"post\" style=\"font-family: sans-serif;right: 5%;top: 5%;position: absolute;\">\n" +
+            "        <input type=\"search\" placeholder=\"Search by name, email\" name=\"searchValue\">\n" +
+            "        <input type=\"submit\" value=\"Go\">\n" +
+            "    </form>\n" +
+            "</div>\n " +
+            "<h1 style=\"font-family: sans-serif;position: relative; top:3%;\">Your friends</h1>";
+
+    String FriendListPageDefaultDisplayFriendStart = "<div style=\"background-color: black;position: relative;margin-top: 2%; height: 8%; width: 75%;\">\n" +
+            "    <h2 style=\"font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;\">";
+
+    String FriendListPageDefaultDisplayFriendEnd = "</h2>\n" +
+            "    <form action=\"\" method=\"post\" style=\"font-family: sans-serif;position: relative;left: 90%;bottom: 45%;\">\n" +
+            "        <input type=\"submit\" value=\"Message\">\n" +
+            "    </form>\n" +
+            "</div>";
+
+    String FriendListPageDefaultLogout = "<a href=\"index.jsp\" style=\"font-family: sans-serif;color: black;text-decoration: none;position: relative; margin-left: 50%;\">Logout</a>\n" +
+            "</form>\n" +
+            "</body>\n" +
+            "</html>";
 }

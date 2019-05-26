@@ -152,4 +152,76 @@ public class UserMethods implements SqlQueries {
 
         return psw;
     }
+
+    public static String getFirstName(String email) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserFirstName);
+
+        statement.setString(1,email);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        String fn  = rs.getString("firstname");
+
+        connection.close();
+
+        return fn;
+    }
+
+    public static String getLastName(String email) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserLastName);
+
+        statement.setString(1,email);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        String ln = rs.getString("lastname");
+
+        connection.close();
+
+        return ln;
+    }
+
+    public static String getEmail(int id) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserEmail);
+
+        statement.setInt(1,id);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        String ln = rs.getString("email");
+
+        connection.close();
+
+        return ln;
+    }
+
+    public static int getID(String email) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserId);
+
+        statement.setString(1,email);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        int ln = rs.getInt("id");
+
+        connection.close();
+
+        return ln;
+    }
 }

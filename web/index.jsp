@@ -30,7 +30,7 @@
     <input type="submit" value="Login">
   </form>
   <a href="SignUpPage.jsp" style="margin: 0 auto;position: absolute;top: 43%;left: 45%;">No account? Click here</a>
-  <a href=" " style="margin: 0 auto;position: absolute;top: 48%;left: 45%;">Forgot password?</a>
+  <a href="FriendList.jsp" style="margin: 0 auto;position: absolute;top: 48%;left: 45%;">Forgot password?</a>
 </div>
 </body>
 </html>
