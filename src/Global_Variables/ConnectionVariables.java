@@ -7,7 +7,7 @@ package Global_Variables;
 public class ConnectionVariables {
     private static String URL="jdbc:mysql://localhost:3306/chatapp";
     private static String user="root";
-    private static String password="MySQLpassword";
+    private static String password="";
 
     public static String getURL() {
         return URL;
