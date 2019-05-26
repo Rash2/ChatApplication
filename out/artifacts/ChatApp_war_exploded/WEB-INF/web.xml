@@ -20,4 +20,14 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FriendListServlet</servlet-name>
+        <servlet-class>ResolveFriendList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FriendListServlet</servlet-name>
+        <url-pattern>/friendList</url-pattern>
+    </servlet-mapping>
+
 </web-app>

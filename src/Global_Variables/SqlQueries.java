@@ -2,6 +2,7 @@ package Global_Variables;
 
 public interface SqlQueries {
     //Queries for users table
+
     String addNewUser="INSERT INTO users ( firstname, lastname, sex, birthdate, email, password)" +
             "VALUES (?, ? , ? , ? , ? , ? )";
 
@@ -14,6 +15,10 @@ public interface SqlQueries {
     String findUserByLastName="SELECT * FROM users WHERE  lastname = ?";
 
     String getUserPassword="SELECT password FROM users WHERE email = ?";
+
+    String getUserFirstName="SELECT firstname FROM users WHERE email = ?";
+
+    String getUserLastName="SELECT lastname FROM users WHERE email = ?";
 
     //Queries for message_log table
     public static final String addMessageToLog="INSERT INTO message_log (idconversation, msg_source, text) " +
