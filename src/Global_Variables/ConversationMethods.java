@@ -9,7 +9,7 @@ public class ConversationMethods implements SqlQueries {
 
     //add conversation in database
     public static void addConversation(String members,String name){
-        //connect to data base
+        //connect to data basea
         try(Connection con= DriverManager.getConnection(ConnectionVariables.getURL(),ConnectionVariables.getUser(),
                 ConnectionVariables.getPassword())){
             //create statement and set parameters
