@@ -1,6 +1,7 @@
 package Global_Variables;
 
 public interface SqlQueries {
+    //Queries for users table
     String addNewUser="INSERT INTO users ( firstname, lastname, sex, birthdate, email, password)" +
             "VALUES (?, ? , ? , ? , ? , ? )";
 
@@ -32,6 +33,8 @@ public interface SqlQueries {
     public static final String updateConversationName="UPDATE conversation SET name = ? WHERE idconversation = ?";
 
     public static final String deleteConversationByMembers="DELETE FROM conversation WHERE members = ?";
+
+    public static final String deleteConversationByName="DELETE FROM conversation WHERE name = ?";
 
     public static final String deleteConversationById="DELETE FROM conversation WHERE idconversation = ?";
 
