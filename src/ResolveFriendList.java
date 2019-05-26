@@ -24,6 +24,7 @@ public class ResolveFriendList extends HttpServlet implements HtmlStrings {
 
             out.println(FriendListPageDefaultStartTitle + firstName + FriendListPageDefaultEndTitle +
                     FriendListPageDefaultDisplayHeaderStart + firstName + FriendListPageDefaultDisplayHeaderEnd);
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {

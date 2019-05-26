@@ -18,5 +18,30 @@
         <input type="submit" value="Go">
     </form>
 </div>
+<h1 style="font-family: sans-serif;position: relative; top:3%;">Your friends</h1>
+
+<div style="background-color: black;position: relative;margin-top: 2%; height: 8%; width: 75%;">
+    <h2 style="font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;">Nume Prenume</h2>
+    <form action="" method="post" style="font-family: sans-serif;position: relative;left: 90%;bottom: 45%;">
+        <input type="submit" value="Message">
+    </form>
+</div>
+
+<div style="background-color: black;position: relative;margin-top: 2%; height: 8%; width: 75%;">
+    <h2 style="font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;">Nume Prenume</h2>
+    <form action="" method="post" style="font-family: sans-serif;position: relative;left: 90%;bottom: 45%;">
+        <input type="submit" value="Message">
+    </form>
+</div>
+
+<div style="background-color: black;position: relative;margin-top: 2%; height: 8%; width: 75%;">
+    <h2 style="font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;">Nume Prenume</h2>
+    <form action="" method="post" style="font-family: sans-serif;position: relative;left: 90%;bottom: 45%;">
+        <input type="submit" value="Message">
+    </form>
+</div>
+
+<a href="index.jsp" style="font-family: sans-serif;color: black;text-decoration: none;position: relative; margin-left: 50%;">Logout</a>
+</form>
 </body>
 </html>
