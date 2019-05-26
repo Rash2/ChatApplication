@@ -1,6 +1,7 @@
 import Global_Variables.HtmlStrings;
 import Global_Variables.UserMethods;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +27,8 @@ public class ResolveLogin extends HttpServlet implements HtmlStrings {
                     //Check if the email matches the password
                     if (password.equals(UserMethods.getPassword(emailAddress))) {
                         //Go to the user page
-                        out.println("BINE ATI VENIT DOMNULE " + emailAddress);
+                        RequestDispatcher rd = req.getRequestDispatcher("friendList");
+                        rd.forward(req,resp);
                     } else {
                         out.println(LoginPageInvalidPassword);
                     }
