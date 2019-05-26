@@ -39,6 +39,8 @@ public interface SqlQueries {
 
     public static final String deleteConversationByMembers="DELETE FROM conversation WHERE members = ?";
 
+    public static final String deleteConversationByName="DELETE FROM conversation WHERE name = ?";
+
     public static final String deleteConversationById="DELETE FROM conversation WHERE idconversation = ?";
 
     public static final String findConversationById="SELECT * FROM conversation WHERE idconversation = ?";
