@@ -12,7 +12,14 @@
 </head>
 <body>
 <h1 style="font-family: sans-serif;position: relative; left: 47%;">Results</h1>
-<h2 style="font-family: sans-serif;position: relative; left: 45%;top: 5%;color: red">No results found</h2>
+<div style="background-color: black;position: relative;margin-top: 2%; height: 8%; width: 75%;">
+    <h2 style="font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;">Nume Prenume - Email</h2>
+    <form action="" method="post" style="font-family: sans-serif;position: relative;left: 90%;bottom: 45%;">
+        <input type="hidden" name="emailToAdd" value="">
+        <input type="submit" value="Add Friend">
+    </form>
+</div>
+
 
 </body>
 </html>

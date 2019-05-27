@@ -32,7 +32,8 @@ public class ResolveSearch extends HttpServlet implements HtmlStrings {
                     if(!FriendshipMethods.checkIfFriends(UserMethods.getID(currentEmail),UserMethods.getID(foundEmail)))
                         out.println(DefaultStartTitle + UserMethods.getFirstName(currentEmail) + DefaultEndTitle + SearchPageDisplayTitle +
                             SearchPageDisplayResultStart + foundFirstName + " " +
-                            foundLastName + " - " + foundEmail + SearchPageDisplayResultEnd + "</body></html>");
+                            foundLastName + " - " + foundEmail + SearchPageDisplayResultEnd + SearchPageAddFriendStart + foundEmail +
+                                SearchPageAddFriendEnd + "</body></html>");
                     else
                         out.println(DefaultStartTitle + UserMethods.getFirstName(currentEmail) + DefaultEndTitle + SearchPageDisplayTitle +
                                 SearchPageDisplayResultStart + foundFirstName + " " +
@@ -61,7 +62,8 @@ public class ResolveSearch extends HttpServlet implements HtmlStrings {
                         if(!result.equals(currentEmail))
                             if(!FriendshipMethods.checkIfFriends(UserMethods.getID(currentEmail),UserMethods.getID(result)))
                                 out.println(SearchPageDisplayResultStart + UserMethods.getFirstName(result) + " " +
-                                        UserMethods.getLastName(result) + " - " + result + SearchPageDisplayResultEnd + "</body></html>");
+                                        UserMethods.getLastName(result) + " - " + result + SearchPageDisplayResultEnd
+                                        + SearchPageAddFriendStart + result + SearchPageAddFriendEnd+ "</body></html>");
                             else
                                 out.println(SearchPageDisplayResultStart + UserMethods.getFirstName(result) + " " +
                                         UserMethods.getLastName(result) + " - " + result + SearchPageDisplayResultEndAlreadyFriends + "</body></html>");

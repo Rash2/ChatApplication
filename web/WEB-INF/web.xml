@@ -39,4 +39,12 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddFriendServlet</servlet-name>
+        <servlet-class>ResolveAddFriend</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddFriendServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
 </web-app>

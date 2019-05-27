@@ -315,7 +315,11 @@ public interface HtmlStrings {
             "    <h2 style=\"font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;\">";
 
     String SearchPageDisplayResultEnd = "</h2>\n" +
-            "    <form action=\"\" method=\"post\" style=\"font-family: sans-serif;position: relative;left: 90%;bottom: 45%;\">\n" +
+            "    <form action=\"/add\" method=\"post\" style=\"font-family: sans-serif;position: relative;left: 90%;bottom: 45%;\">\n" ;
+
+    String SearchPageAddFriendStart = "<input type=\"hidden\" name=\"emailToAdd\" value=\"" ;
+
+    String SearchPageAddFriendEnd = "\">" +
             "        <input type=\"submit\" value=\"Add Friend\">\n" +
             "    </form>\n" +
             "</div>";
