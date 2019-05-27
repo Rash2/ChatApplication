@@ -41,7 +41,8 @@ public class ResolveFriendList extends HttpServlet implements HtmlStrings {
             }
 
             for(int i = 0; i < friendsEmail.length; i++)
-                out.println(FriendListPageDefaultDisplayFriendStart + friendsFirstName[i] + " " + friendsLastName[i] + FriendListPageDefaultDisplayFriendEnd);
+                out.println(FriendListPageDefaultDisplayFriendStart + friendsFirstName[i] + " " + friendsLastName[i] +
+                        FriendListPageDefaultDisplayFriendEnd + FriendListPageDefaultMessageStart + friendsEmail[i] + FriendListPageDefaultMessageEnd);
 
             out.println(FriendListPageDefaultLogout);
         } catch (ClassNotFoundException e) {

@@ -91,5 +91,80 @@ public class ConversationMethods implements SqlQueries {
         return ar;
     }
 
+    // method that verifies if a conversation between two users exists
+    public static boolean conversationExists(String email1,String email2) throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
 
+        PreparedStatement statement = connection.prepareStatement(findConversationByMembers);
+
+        StringBuffer aux=new StringBuffer("");
+        aux.append(email1);
+        aux.append(";");
+        aux.append(email2);
+
+        statement.setString(1, aux.toString());
+
+        ResultSet rs = statement.executeQuery();
+
+        boolean bool;
+        if (!rs.isBeforeFirst())
+            bool = false;
+        else
+            bool = true;
+
+        connection.close();
+        return bool;
+    }
+
+    // method that returns the id of the conversation based on the members, -1 if the conversation doesn't exist
+    public static int getConversationId(String email1,String email2) throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(findConversationByMembers);
+
+        StringBuffer aux=new StringBuffer();
+        aux.append(email1);
+        aux.append(";");
+        aux.append(email2);
+
+        String auxString=new String(aux);
+
+        statement.setString(1, auxString);
+
+        ResultSet rs = statement.executeQuery();
+
+        int rt = -1;
+
+        if(rs.next())
+            rt = rs.getInt("idconversation");
+
+        if(rt != -1) {
+            connection.close();
+            return rt;
+        }
+
+        //switch the email's positions
+        StringBuffer aux2=new StringBuffer();
+        aux.append(email2);
+        aux.append(";");
+        aux.append(email1);
+
+        String aux2String=new String(aux2);
+
+        statement.setString(1, aux2String);
+
+        rs=statement.executeQuery();
+
+        if(rs.next()){
+            rt=rs.getInt("idconversation");
+        }else{
+            rt=-1;
+        }
+
+        connection.close();
+
+        return rt;
+    }
 }

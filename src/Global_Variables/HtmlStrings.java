@@ -298,7 +298,11 @@ public interface HtmlStrings {
             "    <h2 style=\"font-family: sans-serif;position: relative;color: white;top: 25%;left: 5%;\">";
 
     String FriendListPageDefaultDisplayFriendEnd = "</h2>\n" +
-            "    <form action=\"\" method=\"post\" style=\"font-family: sans-serif;position: relative;left: 90%;bottom: 45%;\">\n" +
+            "    <form action=\"/message\" method=\"post\" style=\"font-family: sans-serif;position: relative;left: 90%;bottom: 45%;\">\n";
+
+    String FriendListPageDefaultMessageStart = "<input type=\"hidden\" name=\"emailToMessage\" value=\"";
+
+    String FriendListPageDefaultMessageEnd = "\">" +
             "        <input type=\"submit\" value=\"Message\">\n" +
             "    </form>\n" +
             "</div>";
@@ -330,4 +334,33 @@ public interface HtmlStrings {
 
     String SearchPageDisplayNoResults = "<h2 style=\"font-family: sans-serif;position: relative; left: 45%;top: 5%;color: red\">No results found</h2>";
 
+    String MessagesConversationNameStart = "<body>\n" +
+            "\n" +
+            "<div style=\"background-color: black;width: 100%;height: 10%;\">\n" +
+            "    <h1 style=\"font-family: sans-serif;left: 2%;position: absolute;color: white\">";
+
+    String MessagesConversationNameEnd = "</h1>\n" +
+            "    <form action=\"/changename\" method=\"post\" style=\"font-family: sans-serif;right: 5%;top: 5%;position: absolute;\">\n" +
+            "        <input type=\"text\" placeholder=\"New name\" name=\"conversationName\">\n";
+
+    String MessagesChangeNameStart = "<input type=\"hidden\" name=\"emailToSend\" value=\"";
+
+    String MessagesChangeNameEnd = "\">" +
+            "        <input type=\"submit\" value=\"Change\">\n" +
+            "    </form>\n" +
+            "</div>";
+
+    String SendMessageStart = "<form action=\"/prm\" method=\"post\" style=\"font-family: sans-serif; position: relative;top: 2%;\">\n" +
+            "    <input type=\"text\" placeholder=\"Send message\" name=\"messageSent\" style=\"width: 45%;height: 10%;\">\n" +
+            "    <input type=\"hidden\" name=\"emailToSend\" value=\"";
+
+    String SendMessageEnd = "\">\n" +
+            "    <input type=\"submit\" value=\"Send\" style=\"height: 10%;width: 10%;\">\n" +
+            "</form>";
+
+    String BeforeName = "<p style=\"font-family: sans-serif;position: relative;top: 2%;\"><b>";
+
+    String AfterName = ":</b>";
+
+    String AfterMessage = "</p>";
 }

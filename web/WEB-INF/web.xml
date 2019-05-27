@@ -47,4 +47,31 @@
         <servlet-name>AddFriendServlet</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>ResolveMessage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/message</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangeNameServlet</servlet-name>
+        <servlet-class>ResolveChangeName</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeNameServlet</servlet-name>
+        <url-pattern>/changename</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProcessMessages</servlet-name>
+        <servlet-class>ResolveChangeName</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProcessMessages</servlet-name>
+        <url-pattern>/prm</url-pattern>
+    </servlet-mapping>
 </web-app>
