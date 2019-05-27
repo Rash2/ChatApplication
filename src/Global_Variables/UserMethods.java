@@ -1,6 +1,7 @@
 package Global_Variables;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UserMethods implements SqlQueries {
 
@@ -8,17 +9,17 @@ public class UserMethods implements SqlQueries {
 
     public static void addUser(String firstName, String lastName, String sex, int year, int month, int day, String email, String password) throws SQLException, ClassNotFoundException {
 
-        Date birthdate = new Date(year,month,day);
+        Date birthdate = new Date(year, month, day);
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
         PreparedStatement statement = connection.prepareStatement(addNewUser);
 
-        statement.setString(1,firstName);
-        statement.setString(2,lastName);
-        statement.setString(3,sex);
-        statement.setDate(4,birthdate);
-        statement.setString(5,email);
-        statement.setString(6,password);
+        statement.setString(1, firstName);
+        statement.setString(2, lastName);
+        statement.setString(3, sex);
+        statement.setDate(4, birthdate);
+        statement.setString(5, email);
+        statement.setString(6, password);
 
         int i = statement.executeUpdate();
         System.out.println(i + " records inserted");
@@ -42,7 +43,7 @@ public class UserMethods implements SqlQueries {
         connection.close();
     }
 
-    public static void findUserByEmail(String email) throws ClassNotFoundException, SQLException{
+    public static void findUserByEmail(String email) throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
@@ -52,7 +53,7 @@ public class UserMethods implements SqlQueries {
         statement.setString(1, email);
 
         ResultSet rs = statement.executeQuery();
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.print(rs.getString(1) + " ");
             System.out.print(rs.getString(2) + " ");
             System.out.print(rs.getString(3) + " ");
@@ -66,17 +67,17 @@ public class UserMethods implements SqlQueries {
         connection.close();
     }
 
-    public static void findUserByFirstName(String firstName) throws ClassNotFoundException, SQLException{
+    public static void findUserByFirstName(String firstName) throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
 
         PreparedStatement statement = connection.prepareStatement(findUserByFirstName);
 
-        statement.setString(1,firstName);
+        statement.setString(1, firstName);
 
         ResultSet rs = statement.executeQuery();
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.print(rs.getString(1) + " ");
             System.out.print(rs.getString(2) + " ");
             System.out.print(rs.getString(3) + " ");
@@ -90,17 +91,17 @@ public class UserMethods implements SqlQueries {
         connection.close();
     }
 
-    public static void findUserByLastName(String lastName) throws ClassNotFoundException, SQLException{
+    public static void findUserByLastName(String lastName) throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.cj.Driver");
         Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
 
         PreparedStatement statement = connection.prepareStatement(findUserByLastName);
 
-        statement.setString(1,lastName);
+        statement.setString(1, lastName);
 
         ResultSet rs = statement.executeQuery();
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.print(rs.getString(1) + " ");
             System.out.print(rs.getString(2) + " ");
             System.out.print(rs.getString(3) + " ");
@@ -126,7 +127,7 @@ public class UserMethods implements SqlQueries {
         ResultSet rs = statement.executeQuery();
 
         boolean bool;
-        if(!rs.isBeforeFirst())
+        if (!rs.isBeforeFirst())
             bool = false;
         else
             bool = true;
@@ -142,11 +143,11 @@ public class UserMethods implements SqlQueries {
 
         PreparedStatement statement = connection.prepareStatement(getUserPassword);
 
-        statement.setString(1,email);
+        statement.setString(1, email);
 
         ResultSet rs = statement.executeQuery();
         rs.next();
-        String psw  = rs.getString("password");
+        String psw = rs.getString("password");
 
         connection.close();
 
@@ -160,11 +161,11 @@ public class UserMethods implements SqlQueries {
 
         PreparedStatement statement = connection.prepareStatement(getUserFirstName);
 
-        statement.setString(1,email);
+        statement.setString(1, email);
 
         ResultSet rs = statement.executeQuery();
         rs.next();
-        String fn  = rs.getString("firstname");
+        String fn = rs.getString("firstname");
 
         connection.close();
 
@@ -178,7 +179,7 @@ public class UserMethods implements SqlQueries {
 
         PreparedStatement statement = connection.prepareStatement(getUserLastName);
 
-        statement.setString(1,email);
+        statement.setString(1, email);
 
         ResultSet rs = statement.executeQuery();
         rs.next();
@@ -188,4 +189,80 @@ public class UserMethods implements SqlQueries {
 
         return ln;
     }
+
+    public static String getEmail(int id) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserEmail);
+
+        statement.setInt(1, id);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        String ln = rs.getString("email");
+
+        connection.close();
+
+        return ln;
+    }
+
+    public static int getID(String email) throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(getUserId);
+
+        statement.setString(1, email);
+
+        ResultSet rs = statement.executeQuery();
+        rs.next();
+        int ln = rs.getInt("id");
+
+        connection.close();
+
+        return ln;
+    }
+
+    public static boolean hasName(String name) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(findUserByName);
+
+        statement.setString(1, name);
+        statement.setString(2, name);
+
+        ResultSet rs = statement.executeQuery();
+
+        boolean bool;
+        if (!rs.isBeforeFirst())
+            bool = false;
+        else
+            bool = true;
+
+        connection.close();
+        return bool;
+    }
+
+    public static ArrayList<String> getEmailsbyName(String name) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(findUserByName);
+
+        statement.setString(1, name);
+        statement.setString(2, name);
+
+        ResultSet rs = statement.executeQuery();
+
+        ArrayList<String> emails = new ArrayList<>();
+        while (rs.next())
+            emails.add(rs.getString("email"));
+
+        return emails;
+    }
+
 }

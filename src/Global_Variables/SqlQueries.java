@@ -20,6 +20,12 @@ public interface SqlQueries {
 
     String getUserLastName="SELECT lastname FROM users WHERE email = ?";
 
+    String getUserEmail="SELECT email FROM users WHERE id = ?";
+
+    String getUserId="SELECT id FROM users WHERE email = ?";
+
+    String findUserByName="SELECT * FROM users WHERE firstname = ? OR lastname = ?";
+
     //Queries for message_log table
     public static final String addMessageToLog="INSERT INTO message_log (idconversation, msg_source, text) " +
             "VALUES (?, ?, ?)";
@@ -60,6 +66,7 @@ public interface SqlQueries {
 
     public static final String findUserFriendships="SELECT * FROM friendship WHERE user1 = ?";
 
+    String areFriends = "SELECT * FROM friendship WHERE user1 = ? AND user2 = ?";
 
     //Queries for friendship_requests table
     public static final String addFriendshipRequest="INSERT INTO friendship_requests (user1, user2, date)" +
