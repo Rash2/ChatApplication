@@ -34,8 +34,10 @@ public interface SqlQueries {
 
     public static final String deleteMessageFromLogByConversation="DELETE FROM message_log WHERE idconversation = ?";
 
+    String findMessagesInLogByConversation="SELECT * FROM message_log WHERE idconversation = ?";
 
     //Queries for conversation table
+
     public static final String addConversation="INSERT INTO conversation (members, name) " +
             "VALUES ( ?, ?)";
 

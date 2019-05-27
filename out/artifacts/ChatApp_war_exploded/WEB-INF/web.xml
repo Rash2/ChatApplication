@@ -29,5 +29,14 @@
         <servlet-name>FriendListServlet</servlet-name>
         <url-pattern>/friendList</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>ResolveSearch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
 
 </web-app>
