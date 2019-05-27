@@ -28,7 +28,7 @@ public interface SqlQueries {
     public static final String addMessageToLog="INSERT INTO message_log (idconversation, msg_source, text) " +
             "VALUES (?, ?, ?)";
 
-    public static final String findMessageInLogByConversation="SELECT * FROM message_log WHERE idconversation = ?";
+    public static final String findMessagesInLogByConversation="SELECT * FROM message_log WHERE idconversation = ?";
 
     public static final String deleteMessageFromLogByConversation="DELETE FROM message_log WHERE idconversation = ?";
 

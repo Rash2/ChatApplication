@@ -1,3 +1,4 @@
+package Global_Variables;
 public class MessageLog {
 
     private int idMessage;

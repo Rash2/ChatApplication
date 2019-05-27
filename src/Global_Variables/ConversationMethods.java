@@ -1,9 +1,9 @@
 package Global_Variables;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public class ConversationMethods implements SqlQueries {
 
@@ -69,6 +69,29 @@ public class ConversationMethods implements SqlQueries {
         }catch(SQLException e){
             e.printStackTrace();
         }
+    }
+
+    //get all the messages from a conversation
+    public static ArrayList<MessageLog> getConversationMessages(int idConversation) throws ClassNotFoundException, SQLException{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(ConnectionVariables.getURL(), ConnectionVariables.getUser(), ConnectionVariables.getPassword());
+
+        PreparedStatement statement = connection.prepareStatement(findMessagesInLogByConversation);
+
+        statement.setInt(1, idConversation);
+
+        ResultSet rs = statement.executeQuery();
+        ArrayList<MessageLog> ar=new ArrayList<>();
+
+        while(rs.next()){
+            ar.add(new MessageLog(rs.getInt("idconversation"),rs.getInt("msg_source"),rs.getString("text")));
+        }
+
+
+
+        connection.close();
+
+        return ar;
     }
 
 

@@ -20,7 +20,7 @@ public class ResolveLogin extends HttpServlet implements HtmlStrings {
 
         resp.setContentType("text/html");
 
-        try {
+        try {//check if a field is missing
             if (!emailAddress.isEmpty() && !password.isEmpty()) {
                 // Check if the email exists
                 if (UserMethods.hasEmail(emailAddress)) {
